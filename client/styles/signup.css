@@ -1,0 +1,35 @@
+.bg .img {
+  background-image: url(https://images.unsplash.com/photo-1521539772582-ab5d643b5257?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=57916fb1d7c03b2f7d36d72fb1079f12&auto=format&fit=crop&w=1446&q=80);
+  background-size: cover;
+  background-position: center;
+  background-color: lightblue;
+  background-blend-mode: multiply; }
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #eee; }
+
+.signup-content {
+  margin-top: 1em;
+  width: 60%; }
+
+.ba-input {
+  font-size: 2em;
+  margin: 0.5em;
+  padding: 0.1em; }
+
+.signup-button {
+  outline: none;
+  border: none;
+  font-size: 2em;
+  padding: 0.4em;
+  background-color: #000;
+  color: #eee;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 10px; }

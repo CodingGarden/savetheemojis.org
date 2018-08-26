@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'npm run watch:server' 'npm run watch:styles'",
+    "start": "npm run styles && concurrently 'npm run watch:server' 'npm run watch:styles'",
+    "styles": "node-sass -r scss/ --output styles/",
     "watch:server": "live-server",
     "watch:styles": "node-sass -w -r scss/ --output styles/"
   },
