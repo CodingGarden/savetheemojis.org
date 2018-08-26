@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run styles && concurrently 'npm run watch:server' 'npm run watch:styles'",
     "styles": "node-sass -r scss/ --output styles/",
+    "build": "./build.sh",
     "watch:server": "live-server",
     "watch:styles": "node-sass -w -r scss/ --output styles/"
   },
