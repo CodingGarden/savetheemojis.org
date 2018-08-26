@@ -1,0 +1,19 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'npm run watch:server' 'npm run watch:styles'",
+    "watch:server": "live-server",
+    "watch:styles": "node-sass -w -r scss/ --output styles/"
+  },
+  "keywords": [],
+  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.3"
+  }
+}

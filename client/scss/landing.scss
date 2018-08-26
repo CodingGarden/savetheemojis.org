@@ -1,0 +1,65 @@
+@import '_variables.scss';
+
+.bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  z-index: -1;
+
+  .img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+    background-image: url(https://images.unsplash.com/photo-1442120108414-42e7ea50d0b5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88ed2e2c4060869e039f95d361a24a8b&auto=format&fit=crop&w=1418&q=80);
+    background-size: cover;
+    background-position: center;
+    background-color: lightblue;
+    background-blend-mode: multiply;
+  }
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: $light;
+}
+
+.page-header {
+  margin-top: 2em;
+  max-width: 30%;
+  
+  h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+
+  hr {
+    width: 60%;
+    margin: auto;
+    border-top: 0.2vw solid;
+    box-shadow: 0px 5px 15px 0px $dark;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+.link-cards {
+  margin-top: 1em;
+  margin-bottom: 10em;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
