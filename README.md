@@ -2,11 +2,11 @@
 
 ## Todo
 
-* [ ] Client setup
-* [ ] What is sass?
-* [ ] sass setup
-* [ ] Landing Page
-* [ ] Sign Up Page
+* [x] Client setup
+* [x] What is sass?
+* [x] sass setup
+* [x] Landing Page
+* [x] Sign Up Page
 * [ ] Donate Page
 * [ ] Stats Page
 * [ ] Deploy!!

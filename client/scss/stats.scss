@@ -2,7 +2,9 @@
 
 .bg {
   .img {
-    background-image: url(https://images.unsplash.com/photo-1442120108414-42e7ea50d0b5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88ed2e2c4060869e039f95d361a24a8b&auto=format&fit=crop&w=1418&q=80);
+    max-width: 10%;
+    max-height: 10%;
+    background-image: url(https://images.unsplash.com/photo-1534322869500-14fc9f5f5767?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=edbdf7bf9be18bbb172602d7f392f239&auto=format&fit=crop&w=1350&q=80);
     background-size: cover;
     background-position: center;
     background-color: lightblue;
