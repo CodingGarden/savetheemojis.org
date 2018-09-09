@@ -6,3 +6,25 @@
   background-position: center;
   background-color: lightblue;
   background-blend-mode: multiply; }
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #eee; }
+
+.stats-cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center; }
+  .stats-cards .the-facts {
+    width: 27%; }
+  .stats-cards .emoji-card.card-text {
+    font-size: 1em;
+    text-shadow: none;
+    color: #000;
+    padding: 1.5em; }

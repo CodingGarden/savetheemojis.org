@@ -11,3 +11,31 @@
     background-blend-mode: multiply;
   }
 }
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: $light;
+}
+
+.stats-cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .the-facts {
+    width: 27%;
+  }
+
+  .emoji-card.card-text {
+    font-size: 1em;
+    text-shadow: none;
+    color: $dark;
+    padding: 1.5em;
+  }
+}
