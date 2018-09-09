@@ -30,12 +30,47 @@ main {
 
   .the-facts {
     width: 27%;
+    .emoji-card.card-text {
+      font-size: 1em;
+      padding: 1.5em;
+
+      p, small {
+        color: $dark;
+      }
+
+      a {
+        color: blue;
+      }
+    }
   }
 
-  .emoji-card.card-text {
-    font-size: 1em;
+  .the-stats {
+    width: 60%;
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  .emoji-card {
     text-shadow: none;
-    color: $dark;
-    padding: 1.5em;
+  }
+
+  .emoji-card.card-stats {
+    width: 80%;
+
+    .ct-label.ct-horizontal {
+      font-size: 0.25em;
+      color: white;
+    }
+
+    .chartist-tooltip {
+      font-size: 0.25em;
+      color: $dark;
+    }
+
+    .ct-bar {
+      stroke-width: 4vw;
+    }
   }
 }

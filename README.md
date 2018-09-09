@@ -30,3 +30,6 @@
 ![donate](wireframes/donate.jpg)
 
 ![stats](wireframes/stats.jpg)
+
+
+🚜 537108

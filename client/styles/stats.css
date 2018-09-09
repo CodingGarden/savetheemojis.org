@@ -23,8 +23,26 @@ main {
   align-items: center; }
   .stats-cards .the-facts {
     width: 27%; }
-  .stats-cards .emoji-card.card-text {
-    font-size: 1em;
-    text-shadow: none;
-    color: #000;
-    padding: 1.5em; }
+    .stats-cards .the-facts .emoji-card.card-text {
+      font-size: 1em;
+      padding: 1.5em; }
+      .stats-cards .the-facts .emoji-card.card-text p, .stats-cards .the-facts .emoji-card.card-text small {
+        color: #000; }
+      .stats-cards .the-facts .emoji-card.card-text a {
+        color: blue; }
+  .stats-cards .the-stats {
+    width: 60%; }
+    .stats-cards .the-stats p {
+      font-style: italic; }
+  .stats-cards .emoji-card {
+    text-shadow: none; }
+  .stats-cards .emoji-card.card-stats {
+    width: 80%; }
+    .stats-cards .emoji-card.card-stats .ct-label.ct-horizontal {
+      font-size: 0.25em;
+      color: white; }
+    .stats-cards .emoji-card.card-stats .chartist-tooltip {
+      font-size: 0.25em;
+      color: #000; }
+    .stats-cards .emoji-card.card-stats .ct-bar {
+      stroke-width: 4vw; }

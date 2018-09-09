@@ -5,3 +5,4 @@ rm -r dist
 mkdir dist
 cp *.html dist/
 cp -r styles/ dist/styles/
+cp -r scripts/ dist/scripts/

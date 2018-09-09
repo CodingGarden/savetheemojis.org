@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>🎈 Save the Emojis! ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,900" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/stats.css">
@@ -27,17 +28,22 @@
             <h3>The Facts</h3>
             <div class="emoji-card card-text">
               <p>Everyday, emojis are left underused and forgotten. But through the magic of analytics, we can recognize the emojis in need, and bring them back from obscurity.</p>
+              <small>These stats are provided by <a href="http://www.emojitracker.com/">www.emojitracker.com</a></small>
             </div>
           </a>
         </div>
-        <div class="card-container">
-          <h3>Donate</h3>
-          <div class="emoji-card">
-            💸
+        <div class="card-container the-stats">
+          <h3>The Stats</h3>
+          <div class="emoji-card card-stats">
+            <div class="ct-chart ct-perfect-fourth"></div>
           </div>
+          <p>These are some of the currently underused emojis. Please consider them in your next emoji conversation.</p>
         </div>
       </section>
     </section>
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.js"></script>
+  <script src="https://unpkg.com/chartist-plugin-tooltips@0.0.17"></script>
+  <script src="scripts/stats.js"></script>
 </body>
 </html>
