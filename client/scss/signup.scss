@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import "_variables.scss";
 
 .bg {
   .img {
@@ -20,9 +20,30 @@ main {
   color: $light;
 }
 
-.signup-content {
+.signup-content,
+.success-message,
+.error-message {
   margin-top: 1em;
   width: 60%;
+}
+
+.loading {
+  margin: 1em auto;
+  border: 4px solid;
+  padding: 60px;
+  border-radius: 50%;
+  border-color: #ae2a10 transparent;
+  animation: rotation 2s cubic-bezier(1, 0.23, 0, 0.75) infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .ba-input {
