@@ -3,7 +3,7 @@ const signUpContent = document.querySelector(".signup-content");
 const successMessage = document.querySelector(".success-message");
 const errorMessage = document.querySelector(".error-message");
 const loading = document.querySelector(".loading");
-const API_URL = process.env.API_URL || "http://localhost:5000/email";
+const API_URL = "http://localhost:5000/email";
 
 successMessage.style.display = "none";
 errorMessage.style.display = "none";

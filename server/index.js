@@ -4,6 +4,7 @@ const monk = require("monk");
 const rateLimit = require("express-rate-limit");
 const nodemailer = require("nodemailer");
 const fs = require("fs");
+const jwt = require('jsonwebtoken');
 require("dotenv").config();
 
 const app = express();
@@ -44,11 +45,13 @@ app.get("/email", (req, res) => {
 app.post("/email", async (req, res) => {
   const email = {
     email: req.body.email.toString().trim(),
-    created: new Date()
+    created: new Date(),
+    activated: false
   };
   console.log(email);
   count = await emails.count({ email: email.email });
   if (count <= 0) {
+    const token = jwt.sign(email.email, process.env.SECRET_KEY);
     const message = fs.readFileSync("Registered.html").toString();
     emails
       .insert(email)
@@ -58,7 +61,8 @@ app.post("/email", async (req, res) => {
           from: "🎈Save the emojis!💖", // sender address
           to: email.email,
           subject: "Registraion on Save the emojis.",
-          html: message
+          html: message + `\n<a href="localhost:5000/subscribe/${token}">subscribe</a>"
+            + " or go to <strong>localhost:5000/subscribe/${token}</strong>`
         };
         transporter
           .sendMail(mailoptions)
@@ -74,6 +78,32 @@ app.post("/email", async (req, res) => {
 
 app.listen(5000, () => console.log("Listening on http://localhost:5000"));
 
+app.get("/subscribe/:token", (req, res) => {
+  const email = jwt.verify(req.params.token, process.env.SECRET_KEY);
+  emails
+    .update({ email }, { $set: { activated: true } })
+    .then(activatedEmail => {
+      console.log(activatedEmail);
+      // res.json(activatedEmail);
+    })
+    .catch(err => console.error(`Error ${err}`));
+  console.log(`Email subscribed: ${email}`);
+  res.json("Congratulations your email has been successfully subscribed.");
+})
+
+app.get("/unsubscribe/:token", (req, res) => {
+  const email = jwt.verify(req.params.token, process.env.SECRET_KEY);
+  emails
+    .remove({ email })
+    .then(deletedEmail => {
+      console.log(deletedEmail);
+      // res.json(deletedEmail);
+    })
+    .catch(err => console.error(err));
+  console.log(`Email Unsubscribed: ${email}`);
+  res.json("Congratulations your email has been successfully Unsubscribed.");
+})
+
 const sendNewsLetter = () => {
 
   const message = fs.readFileSync("Letter.html").toString();
@@ -82,13 +112,17 @@ const sendNewsLetter = () => {
     .find()
     .then(emails => {
       emails.forEach(email => {
+        const token = jwt.sign(email.email, process.env.SECRET_KEY);
         let mailoptions = {
           from: "🎈Save the emojis!💖", // sender address
           to: email.email,
           subject: "Emojis.",
-          html: message
+          html: message + `\n<a href="localhost:5000/unsubscribe/${token}">Unsubscribe</a>"
+            + " or go to <strong>localhost:5000/unsubscribe/${token}</strong>`
         }
-        transporter.sendMail(mailoptions);
+        if (email.activated) {
+          transporter.sendMail(mailoptions);
+        }
       })
     })
     .then(console.log)
